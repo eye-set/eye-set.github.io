@@ -1,6 +1,23 @@
-title: Eye•Set Project
+title: 👁️ Eye•Set Project
 author: Marek Smigielski
 email: marek.smigielski@gmail.com
 description: >- 
   Eye•Set is a mesh-connected camera trap system built for wildlife photographers and field researchers.
-theme: minima
+remote_theme: jekyll/minima@0b7ca6b
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+
+minima:
+  nav_pages:
+    - about.md
+
+  social_links:
+    - title: Eye•Set project at GitHub
+      icon: github
+      url: "https://github.com/eye-set"
+
+  hide_site_feed_link: true
