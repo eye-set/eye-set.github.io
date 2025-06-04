@@ -1,0 +1,24 @@
+# Jekyll output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+/vendor/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.bak
+*.pid
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Byebug or Pry
+*.rbc
+.byebug_history
+
