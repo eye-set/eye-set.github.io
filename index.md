@@ -11,5 +11,7 @@ _A second pair of eyes for the wild._
 - 📡 Works offline
 - 🧠 AI-ready (optional models)
 
+![Project Overview](img/project-overview.drawio.png)
+
 [📖 GitHub Repo](https://github.com/eye-set)  
 <!-- [▶️ Live Demo](#) -->

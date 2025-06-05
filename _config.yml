@@ -1,6 +1,7 @@
-title: 👁️ Eye•Set Project
-author: Marek Smigielski
-email: marek.smigielski@gmail.com
+title: '👁️ Eye•Set: Thd Camera Project'
+author:
+  name: Marek Smigielski
+  email: marek.smigielski@gmail.com
 description: >- 
   Eye•Set is a mesh-connected camera trap system built for wildlife photographers and field researchers.
 remote_theme: jekyll/minima@0b7ca6b
