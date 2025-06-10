@@ -13,5 +13,5 @@ _A second pair of eyes for the wild._
 
 ![Project Overview](img/project-overview.drawio.png)
 
-[📖 GitHub Repo](https://github.com/eye-set)  
+## More information:
 <!-- [▶️ Live Demo](#) -->
