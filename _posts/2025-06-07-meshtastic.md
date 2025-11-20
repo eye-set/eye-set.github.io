@@ -77,9 +77,9 @@ trigger:
     topic: msh/US/2/json/LongFast/!67ea9400
     payload: "on"
     value_template: |-
-      {% if value_json.from == 4038675309 and
+      {% raw %}{% if value_json.from == 4038675309 and
             value_json.payload.latitude_i is defined and 
-            value_json.payload.longitude_i is defined %}on{% endif %}
+            value_json.payload.longitude_i is defined %}on{% endif %}{% endraw %}
 condition: []
 action:
   - service: device_tracker.see
@@ -87,9 +87,9 @@ action:
     data:
       dev_id: node_1
       gps:
-        - "{{ (trigger.payload | from_json).payload.latitude_i | int * 1e-7 }}"
-        - "{{ (trigger.payload | from_json).payload.longitude_i | int * 1e-7 }}"
-      battery: "{{ states('sensor.node_1_battery_percent')|float(0) }}"
+        - "{% raw %}{{ (trigger.payload | from_json).payload.latitude_i | int * 1e-7 }}{% endraw %}"
+        - "{% raw %}{{ (trigger.payload | from_json).payload.longitude_i | int * 1e-7 }}{% endraw %}"
+      battery: "{% raw %}{{ states('sensor.node_1_battery_percent')|float(0) }}{% endraw %}"
 mode: single
 ```
 
@@ -104,13 +104,13 @@ sensor:
     state_topic: "msh/US/2/json/LongFast/!67ea9400"
     state_class: measurement
     value_template: >-
-      {% if value_json.from == 4038675309 and
+      {% raw %}{% if value_json.from == 4038675309 and
             value_json.payload.voltage is defined and
             value_json.payload.temperature is not defined %}
         {{ (value_json.payload.voltage | float) | round(2) }}
       {% else %}
         {{ this.state }}
-      {% endif %}
+      {% endif %}{% endraw %}
     unit_of_measurement: "Volts"
     # Telemetry packets come in two flavors: The default node telemetry, and the I2C sensor data.
     # Both packets contain "voltage" so we check for temperature to ignore the sensor packet here.
@@ -120,11 +120,11 @@ sensor:
     state_topic: "msh/US/2/json/LongFast/!67ea9400"
     state_class: measurement
     value_template: >-
-      {% if value_json.from == 4038675309 and value_json.payload.battery_level is defined %}
+      {% raw %}{% if value_json.from == 4038675309 and value_json.payload.battery_level is defined %}
         {{ (value_json.payload.battery_level | float) | round(2) }}
       {% else %}
         {{ this.state }}
-      {% endif %}
+      {% endif %}{% endraw %}
     device_class: "battery"
     unit_of_measurement: "%"
 
@@ -133,11 +133,11 @@ sensor:
     state_topic: "msh/US/2/json/LongFast/!67ea9400"
     state_class: measurement
     value_template: >-
-      {% if value_json.from == 4038675309 and value_json.payload.channel_utilization is defined %}
+      {% raw %}{% if value_json.from == 4038675309 and value_json.payload.channel_utilization is defined %}
         {{ (value_json.payload.channel_utilization | float) | round(2) }}
       {% else %}
         {{ this.state }}
-      {% endif %}
+      {% endif %}{% endraw %}
     unit_of_measurement: "%"
 
   - name: "Node 1 AirUtilTX"
@@ -145,11 +145,11 @@ sensor:
     state_topic: "msh/US/2/json/LongFast/!67ea9400"
     state_class: measurement
     value_template: >-
-      {% if value_json.from == 4038675309 and value_json.payload.air_util_tx is defined %}
+      {% raw %}{% if value_json.from == 4038675309 and value_json.payload.air_util_tx is defined %}
         {{ (value_json.payload.air_util_tx | float) | round(2) }}
       {% else %}
         {{ this.state }}
-      {% endif %}
+      {% endif %}{% endraw %}
     unit_of_measurement: "%"
 ```
 
