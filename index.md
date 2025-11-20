@@ -11,7 +11,7 @@ _A second pair of eyes for the wild._
 - 📡 Works offline
 - 🧠 AI-ready (optional models)
 
-![Project Overview](img/project-overview.drawio.png)
+![Project Overview](img/project-overview.png)
 
 ## More information:
 <!-- [▶️ Live Demo](#) -->

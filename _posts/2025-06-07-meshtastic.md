@@ -7,7 +7,7 @@ permalink: /meshtastic
 
 ## About Meshtastic
 
-Meshtastic is a mesh network for the lora devices. It allows you to communicated over the radio withfree bandwiwth and without internet connection. It works over long distances, too. Catch is that it is extremely low bandwidth. Even sending small file will take significant amount of time.
+Meshtastic is a mesh network for the lora devices. It allows you to communicated over the radio with free bandwidth and without internet connection. It works over long distances, too. Catch is that it is extremely low bandwidth. Even sending small file will take significant amount of time.
 
 ## Setting up "gateway" node
 
